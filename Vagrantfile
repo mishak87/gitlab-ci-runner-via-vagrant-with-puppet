@@ -6,13 +6,15 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--memory", "1024"]
   end
 
-  config.vm.provision :puppet do |puppet|
-    puppet.manifests_path = "puppet/manifests"
-    puppet.manifest_file  = "puppet/manifests"
-    puppet.module_path    = "puppet/modules"
-    puppet.facter         = {
-      :token => "0d89a08eccbd8d1eac91"
-      :url => "gitlab-ci.mishak.net"
+  config.vm.provision "puppet" do |puppet|
+    puppet.module_path = "modules"
+    puppet.facter = {
+      "token" => "0d89a08eccbd8d1eac91",
+      "url" => "gitlab-ci.mishak.net",
     }
+    puppet.options = [
+      '--verbose',
+#     '--debug',
+    ]
   end
 end
