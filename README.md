@@ -3,7 +3,7 @@ gitlab-ci-runner-via-vagrant-with-puppet
 
 *So far futile attempt to automatize whole gitlab-ci-runner at least for php testing*
 
-[gitlab-ci-runner puppet module](https://github.com/mishak87/puppet-gitlab-ci-runner)
+Runner class is in separate repo [gitlab-ci-runner puppet module](https://github.com/mishak87/puppet-gitlab-ci-runner).
 
 Target
 ------
